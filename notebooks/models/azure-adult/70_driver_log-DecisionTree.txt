@@ -1,0 +1,79 @@
+2020/11/19 18:29:55 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/info
+2020/11/19 18:29:55 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/status
+[2020-11-19T18:29:57.119724] Entering context manager injector.
+[context_manager_injector.py] Command line Options: Namespace(inject=['ProjectPythonPath:context_managers.ProjectPythonPath', 'RunHistory:context_managers.RunHistory', 'TrackUserError:context_managers.TrackUserError'], invocation=['train_adult_DecisionTree.py'])
+Script type = None
+Starting the daemon thread to refresh tokens in background for process with pid = 101
+Entering Run History Context Manager.
+Current directory:  /mnt/batch/tasks/shared/LS_root/jobs/unive-workspace/azureml/experiment-1-adult-decisiontree_1605810576_5b35ee4f/mounts/workspaceblobstore/azureml/experiment-1-adult-DecisionTree_1605810576_5b35ee4f
+Preparing to call script [ train_adult_DecisionTree.py ] with arguments: []
+After variable expansion, calling script [ train_adult_DecisionTree.py ] with arguments: []
+
+Loading data from Dataset-adults
+/azureml-envs/azureml_41c75231e8a7b52fe1c9876e32427ac6/lib/python3.6/site-packages/pandas/core/indexing.py:1745: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  isetter(ilocs[0], value)
+X_train.shape: (22792, 11)
+y_train.shape: (22792,)
+X_test.shape: (9769, 11)
+y_test.shape: (9769,)
+model: DecisionTreeClassifier(max_depth=4, random_state=42)
+prediction: [0 0 1 ... 0 0 1]
+Misclassified examples:1486
+confusion matrix:
+ [[7036  419]
+ [1067 1247]]
+auc: 0.7413449002861885
+Accuracy: 0.8478861705394616
+Accuracy:0.8478861705394616
+Precision: 0.8084098874647971
+Recall: 0.7413449002861885
+F1: 0.7655598018373135
+classification_report:
+              precision    recall  f1-score   support
+
+           0       0.87      0.94      0.90      7455
+           1       0.75      0.54      0.63      2314
+
+    accuracy                           0.85      9769
+   macro avg       0.81      0.74      0.77      9769
+weighted avg       0.84      0.85      0.84      9769
+
+Exported model: adult_DecisionTree.pkl
+----- Results from saved Model -----
+Load model: adult_DecisionTree.pkl
+prediction: [0 0 1 ... 0 0 1]
+Misclassified examples:1486
+confusion matrix:
+ [[7036  419]
+ [1067 1247]]
+auc: 0.7413449002861885
+Accuracy: 0.8478861705394616
+Accuracy:0.8478861705394616
+Precision: 0.8084098874647971
+Recall: 0.7413449002861885
+F1: 0.7655598018373135
+classification_report:
+              precision    recall  f1-score   support
+
+           0       0.87      0.94      0.90      7455
+           1       0.75      0.54      0.63      2314
+
+    accuracy                           0.85      9769
+   macro avg       0.81      0.74      0.77      9769
+weighted avg       0.84      0.85      0.84      9769
+
+Max f1_score on max_depth   10  is  0.7819219232846961
+Starting the daemon thread to refresh tokens in background for process with pid = 101
+
+
+[2020-11-19T18:30:34.128390] The experiment completed successfully. Finalizing run...
+Cleaning up all outstanding Run operations, waiting 900.0 seconds
+2 items cleaning up...
+Cleanup took 0.3416602611541748 seconds
+[2020-11-19T18:30:34.873974] Finished context manager injector.
+2020/11/19 18:30:40 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/status
+2020/11/19 18:30:40 Process Exiting with Code:  0

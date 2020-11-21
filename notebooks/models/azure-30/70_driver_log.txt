@@ -1,0 +1,55 @@
+2020/11/18 23:34:31 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/info
+2020/11/18 23:34:31 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/status
+[2020-11-18T23:34:32.907310] Entering context manager injector.
+[context_manager_injector.py] Command line Options: Namespace(inject=['ProjectPythonPath:context_managers.ProjectPythonPath', 'RunHistory:context_managers.RunHistory', 'TrackUserError:context_managers.TrackUserError'], invocation=['train.py'])
+Script type = None
+Starting the daemon thread to refresh tokens in background for process with pid = 90
+Entering Run History Context Manager.
+Current directory:  /mnt/batch/tasks/shared/LS_root/jobs/unive-workspace/azureml/experiment-adult-1_1605742442_a931d60d/mounts/workspaceblobstore/azureml/experiment-adult-1_1605742442_a931d60d
+Preparing to call script [ train.py ] with arguments: []
+After variable expansion, calling script [ train.py ] with arguments: []
+
+Loading data from Dataset-adults
+/azureml-envs/azureml_41c75231e8a7b52fe1c9876e32427ac6/lib/python3.6/site-packages/pandas/core/indexing.py:1745: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  isetter(ilocs[0], value)
+X_train.shape: (22792, 11)
+y_train.shape: (22792,)
+X_test.shape: (9769, 11)
+y_test.shape: (9769,)
+model: Pipeline(steps=[('standardscaler', StandardScaler()),
+                ('linearsvc',
+                 LinearSVC(C=0.001, dual=False, penalty='l1',
+                           random_state=42))])
+prediction: [0 0 0 ... 0 0 0]
+Confusion matrix:
+ [[7218  190]
+ [1553  808]]
+auc: 0.6582899606913277
+Accuracy: 0.8215784624833657
+Precision: 0.8162792350177496
+Recall: 0.6582899606913277
+Exported model: adult.pkl
+----- Results from loaded Model -----
+Load model: adult.pkl
+prediction: [0 0 0 ... 0 0 0]
+Confusion matrix:
+ [[7218  190]
+ [1553  808]]
+auc: 0.6582899606913277
+Accuracy: 0.8215784624833657
+Precision: 0.8162792350177496
+Recall: 0.6582899606913277
+Starting the daemon thread to refresh tokens in background for process with pid = 90
+
+
+[2020-11-18T23:34:57.421866] The experiment completed successfully. Finalizing run...
+Cleaning up all outstanding Run operations, waiting 900.0 seconds
+2 items cleaning up...
+Cleanup took 0.13022875785827637 seconds
+[2020-11-18T23:34:58.128643] Finished context manager injector.
+2020/11/18 23:35:04 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/status
+2020/11/18 23:35:04 Process Exiting with Code:  0

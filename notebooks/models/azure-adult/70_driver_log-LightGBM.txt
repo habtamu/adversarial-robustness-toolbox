@@ -1,0 +1,62 @@
+2020/11/20 14:56:48 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/info
+2020/11/20 14:56:48 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/status
+[2020-11-20T14:56:50.231565] Entering context manager injector.
+[context_manager_injector.py] Command line Options: Namespace(inject=['ProjectPythonPath:context_managers.ProjectPythonPath', 'RunHistory:context_managers.RunHistory', 'TrackUserError:context_managers.TrackUserError'], invocation=['train_adult_LightGBM.py'])
+Script type = None
+Starting the daemon thread to refresh tokens in background for process with pid = 101
+Entering Run History Context Manager.
+Current directory:  /mnt/batch/tasks/shared/LS_root/jobs/unive-workspace/azureml/experiment-1-adult-lightgbm_1605883229_5c30f4d9/mounts/workspaceblobstore/azureml/experiment-1-adult-LightGBM_1605883229_5c30f4d9
+Preparing to call script [ train_adult_LightGBM.py ] with arguments: []
+After variable expansion, calling script [ train_adult_LightGBM.py ] with arguments: []
+
+Loading data from Dataset-adults
+/azureml-envs/azureml_41c75231e8a7b52fe1c9876e32427ac6/lib/python3.6/site-packages/pandas/core/indexing.py:1745: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  isetter(ilocs[0], value)
+X_train.shape: (22792, 11)
+y_train.shape: (22792,)
+X_test.shape: (9769, 11)
+y_test.shape: (9769,)
+[LightGBM] [Warning] Starting from the 2.1.2 version, default value for the "boost_from_average" parameter in "binary" objective is true.
+This may cause significantly different results comparing to the previous versions of LightGBM.
+Try to set boost_from_average=false, if your old models produce bad results
+[LightGBM] [Info] Number of positive: 5527, number of negative: 17265
+[LightGBM] [Info] Total Bins 620
+[LightGBM] [Info] Number of data: 22792, number of used features: 11
+[LightGBM] [Info] [binary:BoostFromScore]: pavg=0.242497 -> initscore=-1.139036
+[LightGBM] [Info] Start training from score -1.139036
+model: <lightgbm.basic.Booster object at 0x7f0ea00adf98>
+prediction: [0.0124085  0.24860591 0.71379743 ... 0.00216316 0.49183203 0.99899067]
+Misclassified examples:9769
+confusion matrix:
+ [[7006  449]
+ [ 868 1446]]
+auc: 0.7823319635473458
+Accuracy: 0.8651857917903573
+Precision: 0.8264122327716951
+Recall: 0.7823319635473458
+F1: 0.8005917442874595
+classification_report:
+              precision    recall  f1-score   support
+
+           0       0.89      0.94      0.91      7455
+           1       0.76      0.62      0.69      2314
+
+    accuracy                           0.87      9769
+   macro avg       0.83      0.78      0.80      9769
+weighted avg       0.86      0.87      0.86      9769
+
+Exported model: adult_LightGBM.pkl
+Starting the daemon thread to refresh tokens in background for process with pid = 101
+
+
+[2020-11-20T14:57:17.060561] The experiment completed successfully. Finalizing run...
+Cleaning up all outstanding Run operations, waiting 900.0 seconds
+2 items cleaning up...
+Cleanup took 5.484480142593384 seconds
+[2020-11-20T14:57:23.002935] Finished context manager injector.
+2020/11/20 14:57:30 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/status
+2020/11/20 14:57:30 Process Exiting with Code:  0

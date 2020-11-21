@@ -1,0 +1,133 @@
+amlModuleIdentifier:
+  namespace: azureml
+  moduleName: Two-Class Boosted Decision Tree
+  moduleVersion: 0.0.140
+meta:
+  collectLogs: true
+metadata:
+  annotations:
+    tags: []
+    familyId: e3c522f8-53d9-4829-8ea4-5c6a6b75330c
+    contact: Microsoft Corporation
+    helpDocument: https://aka.ms/aml/two-class-boosted-decision-tree
+category: Machine Learning Algorithms/Classification
+description: Creates a binary classifier using a boosted decision tree algorithm.
+isDeterministic: true
+inputs:
+- name: Create trainer mode
+  type: Mode
+  default: SingleParameter
+  description: Create advanced learner options
+  options:
+  - SingleParameter:
+    - name: Maximum number of leaves per tree
+      type: Int
+      default: 20
+      description: Specify the maximum number of leaves allowed per tree
+      min: 2
+    - name: Minimum number of training instances required to form a leaf
+      type: Int
+      label: Minimum number of samples per leaf node
+      default: 10
+      description: Specify the minimum number of cases required to form a leaf
+      min: 1
+    - name: The learning rate
+      type: Float
+      label: Learning rate
+      default: 0.2
+      description: Specify the initial learning rate
+      min: 2.220446049250313e-16
+      max: 1
+    - name: Total number of trees constructed
+      type: Int
+      label: Number of trees constructed
+      default: 100
+      description: Specify the maximum number of trees that can be created during
+        training
+      min: 1
+  - ParameterRange:
+    - name: Range for maximum number of leaves per tree
+      type: ParameterRange
+      label: Maximum number of leaves per tree
+      default: 2; 8; 32; 128
+      description: Specify range for the maximum number of leaves allowed per tree
+    - name: Range for minimum number of training instances required to form a leaf
+      type: ParameterRange
+      label: Minimum number of samples per leaf node
+      default: 1; 10; 50
+      description: Specify the range for the minimum number of cases required to form
+        a leaf
+    - name: Range for learning rate
+      type: ParameterRange
+      label: Learning rate
+      default: 0.025; 0.05; 0.1; 0.2; 0.4
+      description: Specify the range for the initial learning rate
+    - name: Range for total number of trees constructed
+      type: ParameterRange
+      label: Number of trees constructed
+      default: 20; 100; 500
+      description: Specify the range for the maximum number of trees that can be created
+        during training
+- name: Random number seed
+  type: Int
+  optional: true
+  description: Type a value to seed the random number generator used by the model.
+    Leave blank for default.
+  min: 0
+  max: 4294967295
+outputs:
+- name: Untrained model
+  type: UntrainedModelDirectory
+  description: An untrained binary classification model
+implementation:
+  container:
+    amlEnvironment:
+      python:
+        condaDependencies:
+          name: project_environment
+          channels:
+          - conda-forge
+          dependencies:
+          - python=3.6.8
+          - scikit-surprise=1.0.6
+          - pip:
+            - azureml-designer-classic-modules==0.0.140
+            - https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.1.0/en_core_web_sm-2.1.0.tar.gz#egg=en_core_web_sm
+            - spacy==2.1.7
+      docker:
+        baseImage: mcr.microsoft.com/azureml/intelmpi2018.3-ubuntu16.04:20200821.v1
+    command:
+    - python
+    - invoker.py
+    - python
+    - -m
+    - azureml.studio.modulehost.module_invoker
+    - --module-name=azureml.studio.modules.ml.initialize_models.binary_classifier.boosted_decision_tree_biclassifier.boosted_decision_tree_biclassifier
+    args:
+    - --create-trainer-mode
+    - inputValue: Create trainer mode
+    - - --maximum-number-of-leaves-per-tree
+      - inputValue: Maximum number of leaves per tree
+    - - --minimum-number-of-training-instances-required-to-form-a-leaf
+      - inputValue: Minimum number of training instances required to form a leaf
+    - - --the-learning-rate
+      - inputValue: The learning rate
+    - - --total-number-of-trees-constructed
+      - inputValue: Total number of trees constructed
+    - - --range-for-maximum-number-of-leaves-per-tree
+      - inputValue: Range for maximum number of leaves per tree
+    - - --range-for-minimum-number-of-training-instances-required-to-form-a-leaf
+      - inputValue: Range for minimum number of training instances required to form
+          a leaf
+    - - --range-for-learning-rate
+      - inputValue: Range for learning rate
+    - - --range-for-total-number-of-trees-constructed
+      - inputValue: Range for total number of trees constructed
+    - - --random-number-seed
+      - inputValue: Random number seed
+    - --untrained-model
+    - outputPath: Untrained model
+  servingEntry:
+    module: azureml.studio.modules.ml.initialize_models.binary_classifier.boosted_decision_tree_biclassifier.boosted_decision_tree_biclassifier
+    class: TwoClassBoostedDecisionTreeModule
+    func: run
