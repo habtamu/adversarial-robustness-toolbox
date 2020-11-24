@@ -1,9 +1,0 @@
-[2020-11-20 22:18:38Z] Experiment: experiment-1-adult-LightGBM
-[2020-11-20 22:18:38Z] Run Id:     9f97ea91-32b6-460f-8594-4d4f6e91163e
-[2020-11-20 22:18:38Z] Run target: cpu-cluster
-[2020-11-20 22:18:38Z] Starting run in Execution Service
-[2020-11-20 22:18:39Z] RunId:[9f97ea91-32b6-460f-8594-4d4f6e91163e] ParentRunId:[1e880620-6af2-4dc3-abf1-58dc02777ed4] ComputeTarget:[]
-[2020-11-20 22:18:41Z] Job is running, job runstatus is Queued
-[2020-11-20 22:18:49Z] Job is running, job runstatus is Running
-[2020-11-20 22:19:55Z] Job is running, job runstatus is Finalizing
-[2020-11-20 22:20:04Z] Job finished, job RunId is 9f97ea91-32b6-460f-8594-4d4f6e91163e
