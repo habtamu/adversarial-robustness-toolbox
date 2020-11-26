@@ -1,0 +1,84 @@
+2020/11/25 12:47:05 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/info
+2020/11/25 12:47:05 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/status
+[2020-11-25T12:47:07.031416] Entering context manager injector.
+[context_manager_injector.py] Command line Options: Namespace(inject=['ProjectPythonPath:context_managers.ProjectPythonPath', 'RunHistory:context_managers.RunHistory', 'TrackUserError:context_managers.TrackUserError'], invocation=['train_iris_SVC.py'])
+Script type = None
+Starting the daemon thread to refresh tokens in background for process with pid = 99
+Entering Run History Context Manager.
+Current directory:  /mnt/batch/tasks/shared/LS_root/jobs/unive-workspace/azureml/train_iris_svc_1606307586_b552d821/mounts/workspaceblobstore/azureml/train_iris_svc_1606307586_b552d821
+Preparing to call script [ train_iris_SVC.py ] with arguments: []
+After variable expansion, calling script [ train_iris_SVC.py ] with arguments: []
+
+Loading data from Dataset-iris
+X_train.shape: (105, 4)
+y_train.shape: (105,)
+X_test.shape: (45, 4)
+y_test.shape: (45,)
+model: SVC(C=0.001, probability=True, random_state=42)
+prediction: [1 1 2 1 1 1 1 2 1 1 2 1 1 1 1 1 2 1 1 2 1 2 1 2 2 2 2 2 1 1 1 1 1 1 1 2 1
+ 1 1 1 2 1 1 1 1]
+y_true: [1 0 2 1 1 0 1 2 1 1 2 0 0 0 0 1 2 1 1 2 0 2 0 2 2 2 2 2 0 0 0 0 1 0 0 2 1
+ 0 0 0 2 1 1 0 0]
+Misclassified examples:19
+confusion matrix:
+ [[ 0 19  0]
+ [ 0 13  0]
+ [ 0  0 13]]
+Accuracy: 0.5777777777777777
+
+[Precision]
+Individual: 0.00, 0.41, 1.00
+micro: 0.5777777777777777
+macro: 0.46875
+
+[Recall]
+Individual: 0.00, 1.00, 1.00
+micro: 0.5777777777777777
+macro: 0.6666666666666666
+
+[F1-score]
+Individual: 0.00, 0.58, 1.00
+micro: 0.5777777777777777
+macro: 0.5259259259259259
+
+[ROC AUC]
+macro: 0.25
+
+classification_report:
+               precision    recall  f1-score   support
+
+           0       0.00      0.00      0.00        19
+           1       0.41      1.00      0.58        13
+           2       1.00      1.00      1.00        13
+
+    accuracy                           0.58        45
+   macro avg       0.47      0.67      0.53        45
+weighted avg       0.41      0.58      0.46        45
+
+
+X_test:
+ [[ 0.48403749 -0.05143998]
+ [-1.26851205 -1.26670948]
+ [ 1.76924049  1.43388941]
+ [ 0.36720086  0.35364985]
+ [ 0.54245581  0.21861991]]
+
+class probabilities:
+ [[0.33606237 0.34238447 0.32155316]
+ [0.33077704 0.34589579 0.32332717]
+ [0.3353296  0.34525419 0.31941621]
+ [0.33639327 0.3425741  0.32103264]
+ [0.33638159 0.34261136 0.32100704]]
+
+Predicting classes: [1 1 2 1 1]
+Exported model: iris_SVC.pkl
+Starting the daemon thread to refresh tokens in background for process with pid = 99
+
+
+[2020-11-25T12:47:32.697554] The experiment completed successfully. Finalizing run...
+Cleaning up all outstanding Run operations, waiting 900.0 seconds
+2 items cleaning up...
+Cleanup took 5.724191904067993 seconds
+[2020-11-25T12:47:38.826881] Finished context manager injector.
+2020/11/25 12:47:45 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/status
+2020/11/25 12:47:45 Process Exiting with Code:  0
