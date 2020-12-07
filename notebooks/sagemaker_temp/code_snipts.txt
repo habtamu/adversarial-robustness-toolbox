@@ -1,0 +1,38 @@
+
+# make the income indicator as first column
+target = data_combined.iloc[:, -1]
+data_combined_bin = pd.concat([target, data_combined.iloc[:, 0:14]], axis=1)
+data_combined_bin.shape #(45222, 15)
+-------------------------------------------------------------------------------
+# Post conversion to binary split the data sets separately
+data_bin = data_combined_bin.iloc[0:data.shape[0], :]
+data_test_bin = data_combined_bin.iloc[data.shape[0]:, :]
+
+print(f"data_bin.shape: {data_bin.shape}")
+print(f"data_test_bin.shape: {data_test_bin.shape}")
+
+#data_bin.shape: (32561, 15)
+#data_test_bin.shape: (12661, 15)
+
+-----------------------------------------------------------------------------------
+# display the data sets post conversion to binary indicators
+display(data_bin)
+display(data_test_bin)
+---------------------------
+# count number of positives and negatives
+display(data_bin.iloc[:,0].value_counts())
+display(data_test_bin.iloc[:,0].value_counts())
+
+0    24453
+1     8108
+Name: IncomeGroup, dtype: int64
+0    9561
+1    3100
+Name: IncomeGroup, dtype: int64
+
+-------------------------
+
+
+
+
+
