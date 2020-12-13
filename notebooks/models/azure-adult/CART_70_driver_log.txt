@@ -1,0 +1,101 @@
+2020/12/12 00:07:56 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/info
+2020/12/12 00:07:56 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/status
+[2020-12-12T00:07:58.712942] Entering context manager injector.
+[context_manager_injector.py] Command line Options: Namespace(inject=['ProjectPythonPath:context_managers.ProjectPythonPath', 'RunHistory:context_managers.RunHistory', 'TrackUserError:context_managers.TrackUserError'], invocation=['python train_adult_CART.py --max-leaf-nodes 30 --model-dir /mnt/batch/tasks/shared/LS_root/mounts/clusters/cpu-standard-ds1-v2/code/Users/877159/script'])
+Script type = COMMAND
+[2020-12-12T00:08:01.077933] Invocation=python train_adult_CART.py --max-leaf-nodes 30 --model-dir /mnt/batch/tasks/shared/LS_root/mounts/clusters/cpu-standard-ds1-v2/code/Users/877159/script
+Starting the daemon thread to refresh tokens in background for process with pid = 98
+Entering Run History Context Manager.
+[2020-12-12T00:08:02.974918] Command Working Directory=/mnt/batch/tasks/shared/LS_root/jobs/unive-workspace/azureml/adult-decisiontree_1607731429_ed50fd22/mounts/workspaceblobstore/azureml/adult-DecisionTree_1607731429_ed50fd22
+[2020-12-12T00:08:02.974994] Starting command : python train_adult_CART.py --max-leaf-nodes 30 --model-dir /mnt/batch/tasks/shared/LS_root/mounts/clusters/cpu-standard-ds1-v2/code/Users/877159/script
+extracting arguments
+--max-leaf-nodes: 30
+--model-dir: /mnt/batch/tasks/shared/LS_root/mounts/clusters/cpu-standard-ds1-v2/code/Users/877159/script
+Loading data from adult-dataset
+   age          workclass  fnlwgt  ... hours-per-week  native-country IncomeGroup
+0   39          State-gov   77516  ...             40   United-States       <=50K
+1   50   Self-emp-not-inc   83311  ...             13   United-States       <=50K
+2   38            Private  215646  ...             40   United-States       <=50K
+3   53            Private  234721  ...             40   United-States       <=50K
+4   28            Private  338409  ...             40            Cuba       <=50K
+
+[5 rows x 15 columns]
+building datasets
+cat_ix: Index(['workclass', 'education', 'marital-status', 'occupation',
+       'relationship', 'race', 'sex', 'native-country'],
+      dtype='object')
+num_ix: Index(['age', 'fnlwgt', 'education-num', 'capital-gain', 'capital-loss',
+       'hours-per-week'],
+      dtype='object')
+X_train:(31655, 14)
+X_test: (13567, 14)
+y_train:(31655,)
+y_test: (13567,)
+training model
+model: Pipeline(memory=None,
+         steps=[('transformer',
+                 ColumnTransformer(n_jobs=None, remainder='drop',
+                                   sparse_threshold=0.3,
+                                   transformer_weights=None,
+                                   transformers=[('c',
+                                                  OneHotEncoder(categories='auto',
+                                                                drop=None,
+                                                                dtype=<class 'numpy.float64'>,
+                                                                handle_unknown='ignore',
+                                                                sparse=True),
+                                                  Index(['workclass', 'education', 'marital-status', 'occupation',
+       'relationship', 'race', 'sex...
+      dtype='object'))],
+                                   verbose=False)),
+                ('cart',
+                 DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None,
+                                        criterion='gini', max_depth=None,
+                                        max_features=None, max_leaf_nodes=30,
+                                        min_impurity_decrease=0.0,
+                                        min_impurity_split=None,
+                                        min_samples_leaf=1, min_samples_split=2,
+                                        min_weight_fraction_leaf=0.0,
+                                        presort='deprecated', random_state=42,
+                                        splitter='best'))],
+         verbose=False)
+y_pred: [0 0 0 ... 0 0 0]
+Misclassified examples:1925
+[[0.62882096 0.37117904]
+ [0.89544895 0.10455105]
+ [0.93571132 0.06428868]
+ ...
+ [0.53596698 0.46403302]
+ [0.73550966 0.26449034]
+ [0.77968338 0.22031662]]
+distinct y_pred: [0 1]
+distinct y_test: [0 1]
+confusion matrix:
+ [[9695  498]
+ [1427 1947]]
+auc: 0.7641014054125851
+Accuracy: 0.8581115943097222
+Precision: 0.7963190184049079
+Recall: 0.5770598695909899
+F1: 0.6691871455576559
+classification_report
+              precision    recall  f1-score   support
+
+           0       0.87      0.95      0.91     10193
+           1       0.80      0.58      0.67      3374
+
+    accuracy                           0.86     13567
+   macro avg       0.83      0.76      0.79     13567
+weighted avg       0.85      0.86      0.85     13567
+
+Computational time:15.726597785949707
+[2020-12-12T00:08:27.356107] Command finished with return code 0
+Starting the daemon thread to refresh tokens in background for process with pid = 98
+
+
+[2020-12-12T00:08:27.515262] The experiment completed successfully. Finalizing run...
+Cleaning up all outstanding Run operations, waiting 900.0 seconds
+1 items cleaning up...
+Cleanup took 0.06989288330078125 seconds
+[2020-12-12T00:08:28.042653] Finished context manager injector.
+2020/12/12 00:08:28 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/status
+2020/12/12 00:08:28 Process Exiting with Code:  0
