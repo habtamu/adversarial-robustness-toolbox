@@ -1,0 +1,41 @@
+2020/12/15 14:09:43 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/info
+2020/12/15 14:09:43 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/status
+[2020-12-15T14:09:45.307953] Entering context manager injector.
+[context_manager_injector.py] Command line Options: Namespace(inject=['ProjectPythonPath:context_managers.ProjectPythonPath', 'RunHistory:context_managers.RunHistory', 'TrackUserError:context_managers.TrackUserError'], invocation=['python train_leaf_nodes.py'])
+Script type = COMMAND
+[2020-12-15T14:09:47.251580] Invocation=python train_leaf_nodes.py
+Starting the daemon thread to refresh tokens in background for process with pid = 98
+Entering Run History Context Manager.
+[2020-12-15T14:09:48.679192] Command Working Directory=/mnt/batch/tasks/shared/LS_root/jobs/unive-workspace/azureml/exp-3_1608041361_0d13dc18/mounts/workspaceblobstore/azureml/Exp-3_1608041361_0d13dc18
+[2020-12-15T14:09:48.679266] Starting command : python train_leaf_nodes.py
+Failure while loading azureml_run_type_providers. Failed to load entrypoint automl = azureml.train.automl.run:AutoMLRun._from_run_dto with exception (pyarrow 2.0.0 (/azureml-envs/azureml_59ea82212676fbef4491f4a2dad93869/lib/python3.6/site-packages), Requirement.parse('pyarrow<2.0.0,>=0.17.0'), {'azureml-dataset-runtime'}).
+Loading data from adult-dataset
+--optimal leaf nodes--
+Computational time [optimal_leaf_nodes]:57.37406396865845
+dict_items([(3, 0.814647798894368), (4, 0.8238911002997691), (5, 0.8389722697143795), (6, 0.8389722697143795), (7, 0.8415596204441451), (8, 0.8435497508770462), (9, 0.8438814258355869), (10, 0.8438814258355869), (11, 0.8444121277733402), (12, 0.84531878423011), (13, 0.8453408958940127), (14, 0.8454734803059741), (15, 0.8459378765908039), (16, 0.8464022630960388), (17, 0.8469771883615976), (18, 0.8472867858848174), (19, 0.847684812949357), (20, 0.8492106864566548), (21, 0.8492106864566548), (22, 0.8501836192275636), (23, 0.8507364254945236), (24, 0.8508912046969439), (25, 0.851112328670667), (26, 0.8514218895204063), (27, 0.8519526232418426), (28, 0.8513113849886642), (29, 0.8514440500822831), (30, 0.8514440549720804), (31, 0.8520632182348369), (32, 0.8520632182348369), (33, 0.8520853396783344), (34, 0.8523728230927528), (35, 0.852770845267495), (36, 0.853390006085353), (37, 0.8534342269682597), (38, 0.853566911621068), (39, 0.8538322515879007), (40, 0.8536111202794812)])
+The best leaf node was found to be: 39
+---parameter
+best_depth: 10
+best_leaf_node: 39
+Accuracy, Training Set: 85.64%
+Accuracy, Testing Set: 85.81%
+Computational time [evaluate_optimal_leaf_nodes]:0.3009955883026123
+Predicted      0     1    All
+Actual                       
+0           9671   522  10193
+1           1403  1971   3374
+All        11074  2493  13567
+confusion matrix:
+ [[9671  522]
+ [1403 1971]]
+[2020-12-15T14:11:15.788898] Command finished with return code 0
+Starting the daemon thread to refresh tokens in background for process with pid = 98
+
+
+[2020-12-15T14:11:15.898292] The experiment completed successfully. Finalizing run...
+Cleaning up all outstanding Run operations, waiting 900.0 seconds
+1 items cleaning up...
+Cleanup took 0.05750918388366699 seconds
+[2020-12-15T14:11:16.390381] Finished context manager injector.
+2020/12/15 14:11:16 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/status
+2020/12/15 14:11:16 Process Exiting with Code:  0

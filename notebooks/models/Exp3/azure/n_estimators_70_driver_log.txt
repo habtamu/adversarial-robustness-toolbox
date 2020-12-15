@@ -1,0 +1,35 @@
+2020/12/15 14:14:09 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/info
+2020/12/15 14:14:09 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/status
+[2020-12-15T14:14:10.953578] Entering context manager injector.
+[context_manager_injector.py] Command line Options: Namespace(inject=['ProjectPythonPath:context_managers.ProjectPythonPath', 'RunHistory:context_managers.RunHistory', 'TrackUserError:context_managers.TrackUserError'], invocation=['python train_n_estimators.py'])
+Script type = COMMAND
+[2020-12-15T14:14:12.778376] Invocation=python train_n_estimators.py
+Starting the daemon thread to refresh tokens in background for process with pid = 98
+Entering Run History Context Manager.
+[2020-12-15T14:14:14.379258] Command Working Directory=/mnt/batch/tasks/shared/LS_root/jobs/unive-workspace/azureml/exp-3_1608041628_642df8ef/mounts/workspaceblobstore/azureml/Exp-3_1608041628_642df8ef
+[2020-12-15T14:14:14.379329] Starting command : python train_n_estimators.py
+Failure while loading azureml_run_type_providers. Failed to load entrypoint automl = azureml.train.automl.run:AutoMLRun._from_run_dto with exception (pyarrow 2.0.0 (/azureml-envs/azureml_59ea82212676fbef4491f4a2dad93869/lib/python3.6/site-packages), Requirement.parse('pyarrow<2.0.0,>=0.17.0'), {'azureml-dataset-runtime'}).
+Loading data from adult-dataset
+--optimal n_estimators--
+ntrees: [25, 50, 75, 100, 125, 150, 175, 200]
+Computational time [optimal_leaf_nodes]:721.96786236763
+n_tree --> Training score --> cvmeans
+(25 --> 0.8588216711419997 --> 0.8560101089875216)
+(50 --> 0.8590743958300426 --> 0.8565155583636075)
+(75 --> 0.8591375770020534 --> 0.8560101089875216)
+(100 --> 0.8589796240720265 --> 0.8561996525035539)
+(125 --> 0.8589164429000158 --> 0.8562628336755648)
+(150 --> 0.8590428052440373 --> 0.8564207866055916)
+(175 --> 0.8589164429000158 --> 0.8562628336755648)
+(200 --> 0.8590112146580319 --> 0.8562312430895593)
+[2020-12-15T14:26:45.546973] Command finished with return code 0
+Starting the daemon thread to refresh tokens in background for process with pid = 98
+
+
+[2020-12-15T14:26:45.834206] The experiment completed successfully. Finalizing run...
+Cleaning up all outstanding Run operations, waiting 900.0 seconds
+1 items cleaning up...
+Cleanup took 0.06328177452087402 seconds
+[2020-12-15T14:26:46.597192] Finished context manager injector.
+2020/12/15 14:26:46 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/status
+2020/12/15 14:26:46 Process Exiting with Code:  0

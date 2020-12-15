@@ -1,0 +1,39 @@
+2020/12/15 13:31:30 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/info
+2020/12/15 13:31:30 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/status
+[2020-12-15T13:31:31.985388] Entering context manager injector.
+[context_manager_injector.py] Command line Options: Namespace(inject=['ProjectPythonPath:context_managers.ProjectPythonPath', 'RunHistory:context_managers.RunHistory', 'TrackUserError:context_managers.TrackUserError'], invocation=['python train_depth_of_tree.py'])
+Script type = COMMAND
+[2020-12-15T13:31:33.919148] Invocation=python train_depth_of_tree.py
+Starting the daemon thread to refresh tokens in background for process with pid = 98
+Entering Run History Context Manager.
+[2020-12-15T13:31:35.236361] Command Working Directory=/mnt/batch/tasks/shared/LS_root/jobs/unive-workspace/azureml/exp-3_1608039061_a7a72550/mounts/workspaceblobstore/azureml/Exp-3_1608039061_a7a72550
+[2020-12-15T13:31:35.236437] Starting command : python train_depth_of_tree.py
+Failure while loading azureml_run_type_providers. Failed to load entrypoint automl = azureml.train.automl.run:AutoMLRun._from_run_dto with exception (pyarrow 2.0.0 (/azureml-envs/azureml_59ea82212676fbef4491f4a2dad93869/lib/python3.6/site-packages), Requirement.parse('pyarrow<2.0.0,>=0.17.0'), {'azureml-dataset-runtime'}).
+Loading data from adult-dataset
+--optimal depth of tree--
+Computational time [optimal_depth_of_tree]:234.22683191299438
+dict_items([(3, 0.8389722697143795), (4, 0.8390164808176914), (5, 0.8445889819661826), (6, 0.850161473335079), (7, 0.8504047309767933), (8, 0.8521957977570009), (9, 0.8541418955641958), (10, 0.8545399446328238), (11, 0.8536553607215775), (12, 0.850802733592346), (13, 0.8486798793882571), (14, 0.8476405871766529), (15, 0.8451859993364546), (16, 0.8436159416197307), (17, 0.8397903670501978), (18, 0.8366945238425301), (19, 0.835411937315731), (20, 0.8310777260192722), (21, 0.8282914289919512), (22, 0.8258590090483257), (23, 0.826610837404701), (24, 0.8237362648646783), (25, 0.821392181556222), (26, 0.8211489141349129), (27, 0.8202644475788047), (28, 0.8184512422408083), (29, 0.8169695627225316), (30, 0.8159081441776328), (31, 0.8139843193976553), (32, 0.8132324837065837), (33, 0.8119499925308343), (34, 0.8122816454852867), (35, 0.8119941962994502), (36, 0.8101589110812343), (37, 0.8104905591458893), (38, 0.810070410637852), (39, 0.8098934830980486), (40, 0.8096059996836301)])
+The best depth was found to be: 10
+Accuracy, Training Set: 86.60%
+Accuracy, Testing Set: 85.63%
+Computational time [evaluate_depth_of_tree]:0.42345595359802246
+Predicted      0     1    All
+Actual                       
+0           9596   597  10193
+1           1359  2015   3374
+All        10955  2612  13567
+confusion matrix:
+ [[9596  597]
+ [1359 2015]]
+--optimal depth of tree on Xtrain feature set--
+[2020-12-15T13:39:14.137757] Command finished with return code 0
+Starting the daemon thread to refresh tokens in background for process with pid = 98
+
+
+[2020-12-15T13:39:14.271681] The experiment completed successfully. Finalizing run...
+Cleaning up all outstanding Run operations, waiting 900.0 seconds
+1 items cleaning up...
+Cleanup took 0.06757545471191406 seconds
+[2020-12-15T13:39:15.111967] Finished context manager injector.
+2020/12/15 13:39:15 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/status
+2020/12/15 13:39:15 Process Exiting with Code:  0
